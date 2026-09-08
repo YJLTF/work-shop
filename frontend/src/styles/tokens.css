@@ -1,0 +1,78 @@
+/* ============================================================
+   WorkShop 设计令牌
+   概念：「工具墙」——深色工坊里的洞洞板，黄铜配件，
+   每类工具一个「手柄色」。所有颜色本地可用，无外部字体。
+   ============================================================ */
+
+:root {
+  /* 暗色主题（默认） */
+  --bg: #10131a;
+  --bg-soft: #141824;
+  --panel: #191e2b;
+  --panel-2: #1f2534;
+  --panel-hover: #222941;
+  --line: #29304260;
+  --line-strong: #333c52;
+
+  --ink: #e9ecf4;
+  --ink-dim: #a3abbe;
+  --ink-faint: #6b7488;
+
+  --accent: #e8a33d;           /* 黄铜 */
+  --accent-soft: #e8a33d26;
+  --on-accent: #16130a;
+
+  --danger: #e2685c;
+  --ok: #46c28e;
+
+  /* 分类「手柄色」 */
+  --cat-text: #e8a33d;   /* 文本处理 */
+  --cat-dev: #62a8f5;    /* 开发辅助 */
+  --cat-data: #b58af0;   /* 数据分析 */
+  --cat-bio: #45c4b0;    /* 生信 */
+  --cat-quick: #46c28e;  /* 效率 */
+
+  --peg: #ffffff10;            /* 洞洞板圆点 */
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow-card: 0 1px 2px #0000004d, 0 10px 28px -14px #00000073;
+  --shadow-lift: 0 2px 4px #00000059, 0 18px 34px -14px #0000008c;
+
+  --font-ui: 'Segoe UI Variable Text', 'Segoe UI', 'Microsoft YaHei UI',
+    'PingFang SC', system-ui, sans-serif;
+  --font-mono: 'Cascadia Code', 'JetBrains Mono', ui-monospace, 'Consolas',
+    'Courier New', monospace;
+}
+
+html[data-theme='light'] {
+  --bg: #edeff4;
+  --bg-soft: #f4f5f8;
+  --panel: #ffffff;
+  --panel-2: #f5f6fa;
+  --panel-hover: #ffffff;
+  --line: #d8dce6;
+  --line-strong: #c2c8d6;
+
+  --ink: #1d2330;
+  --ink-dim: #57607a;
+  --ink-faint: #8b93a9;
+
+  --accent: #b07716;           /* 亮色下加深的黄铜，保证对比度 */
+  --accent-soft: #b077161f;
+  --on-accent: #fffdf7;
+
+  --danger: #c2453a;
+  --ok: #1d8f63;
+
+  --cat-text: #b07716;
+  --cat-dev: #2f6fc4;
+  --cat-data: #7d4fd1;
+  --cat-bio: #128a78;
+  --cat-quick: #1d8f63;
+
+  --peg: #1d233012;
+
+  --shadow-card: 0 1px 2px #1d233014, 0 10px 26px -16px #1d233033;
+  --shadow-lift: 0 2px 4px #1d23301f, 0 16px 30px -14px #1d23304d;
+}

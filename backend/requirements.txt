@@ -1,0 +1,7 @@
+# 运行时依赖 —— 刻意保持精简，直接决定 exe 体积
+fastapi>=0.115
+uvicorn>=0.30
+python-multipart>=0.0.9
+
+# 打包
+pyinstaller>=6.10

@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# 构建产物
+frontend/node_modules/
+frontend/dist/
+backend/app/static/
+build/pyinstaller/
+dist/
+
+# 打包时自动生成的冻结模块清单
+backend/app/tools/_frozen_tools.py
+
+# 运行数据
+data/
+
+# 用户真实数据，禁止入库（见 AGENTS.md 数据红线）
+PY_CR200VSPY_CR0_Gene_differential_expression.xlsx
+*.xlsx
