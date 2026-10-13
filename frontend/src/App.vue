@@ -2,11 +2,12 @@
 import { onMounted, ref } from 'vue'
 import { api, onConnectionLost } from './api'
 import { useTheme } from './composables/useTheme'
-import { APP_VERSION } from './appMeta'
+// 兜底版本号取自 package.json；页脚实际显示以后端 /api/health 返回为准
+import pkg from '../package.json'
 
 const { theme, toggle } = useTheme()
 const packaged = ref(false)
-const version = ref(APP_VERSION)
+const version = ref(pkg.version)
 // null | 'exiting'（正在停止） | 'stopped'（已退出） | 'lost'（连接断开）
 const shutdownState = ref(null)
 let healthTimer = null
