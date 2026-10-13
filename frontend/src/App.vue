@@ -6,6 +6,7 @@ import { APP_VERSION } from './appMeta'
 
 const { theme, toggle } = useTheme()
 const packaged = ref(false)
+const version = ref(APP_VERSION)
 // null | 'exiting'（正在停止） | 'stopped'（已退出） | 'lost'（连接断开）
 const shutdownState = ref(null)
 let healthTimer = null
@@ -20,6 +21,8 @@ onMounted(async () => {
   try {
     const health = await api.get('/health')
     packaged.value = Boolean(health.packaged)
+    // 版本号以后端为准，避免与 config.py 漂移
+    if (health.version) version.value = health.version
     // 后端曾在线才开启探活：若一开始就是纯前端模式，不应误报"连接断开"
     healthTimer = setInterval(async () => {
       if (shutdownState.value) {
@@ -133,7 +136,7 @@ async function exitApp() {
     </main>
 
     <footer class="app-footer">
-      <span class="mono">WorkShop v{{ APP_VERSION }}</span>
+      <span class="mono">WorkShop v{{ version }}</span>
       <span class="dot" aria-hidden="true">·</span>
       <span>本地运行 · 数据不出机器</span>
     </footer>
