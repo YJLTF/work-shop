@@ -9,7 +9,7 @@
 - **分类筛选 + 模糊搜索**：支持中文名、英文 id、关键词、甚至拼音（如输入 `shi jian` 命中「时间戳转换」），按 `/` 键快速聚焦搜索框
 - **深色 / 浅色主题**：一键切换，自动记忆
 - **打包版页面退出按钮**：打包成 exe 后页面右上角可优雅退出本地服务
-- **内置 7 件工具**：
+- **内置 8 件工具**：
 
 | 工具 | 分类 | 运行位置 | 说明 |
 |------|------|----------|------|
@@ -19,6 +19,7 @@
 | UUID 生成 | 开发辅助 | 前端 | 批量 UUID v4，大小写 / 连字符 / 花括号选项 |
 | 时间戳转换 | 日常效率 | 前端 | 双向转换，秒/毫秒自动识别，本地时区 |
 | CSV 统计 | 数据分析 | Python | 行列概况、数值列统计摘要、数据预览 |
+| CSV/TSV 转换 | 数据分析 | Python | CSV 与 TSV 互转，可同时转换编码（自动检测，UTF-8/GBK/Big5 等）与换行符（CRLF/LF），支持引号风格与空行处理选项 |
 | 差异基因分析 | 生信 | Python + 前端 | 上传 xlsx/csv/txt 差异表达表，ECharts 交互式火山图（红=上调、蓝=下调、灰=非显著），阈值与列映射可调，横纵轴均可缩放；识别 KEGG 列后可绘制基因→通路桑基图：点击散点或「框选绘制」一片即联动绘制相关子图（含绘制全部/清空、滚轮缩放），密集时自动隐藏名签；内置随机模拟数据模板可下载 |
 
 ## 目录结构
@@ -38,6 +39,7 @@ work-shop/
 │           ├── regex_tool.py
 │           ├── hash_tool.py
 │           ├── csv_tool.py
+│           ├── csv_tsv_tool.py   # CSV/TSV 互转：编码与换行符转换，纯标准库
 │           └── volcano_tool.py   # 火山图：标准库解析 xlsx/csv/txt
 ├── frontend/                # Vue 3 + Vite 前端
 │   └── src/
@@ -49,6 +51,7 @@ work-shop/
 │           ├── json-formatter/{tool.js, ToolJsonFormatter.vue}
 │           ├── regex/ …
 │           ├── csv-stats/ …
+│           ├── csv-tsv/ …
 │           └── volcano/ …   #     tool.js + ToolVolcano.vue + analysis.js（纯数据层：
 │                               分组/KEGG 解析/桑基图组装，不依赖 Vue 与 ECharts），
 │                               ECharts 按需引入，public/sample/ 为模拟数据模板（CSV，带 BOM）
